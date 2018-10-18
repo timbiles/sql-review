@@ -1,0 +1,7 @@
+.home {
+    display: flex;
+}
+
+.home_main {
+    width: 60vw;
+}

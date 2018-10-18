@@ -2,4 +2,3 @@
 Thursday, October 18
 
 - Get request
-# sql-review
