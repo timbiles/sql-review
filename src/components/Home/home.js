@@ -39,7 +39,8 @@ class home extends Component {
         console.log(e)
       return (
         <div key={e.bands_id}>
-          <h1>{e.name}</h1>
+          {/* <h1>{e.name}</h1> */}
+          <h1>{e.band_name}</h1>
           <p>{e.genre}</p>
           <button onClick={() => this.handleDelete(e.bands_id)}>Delete</button>
         </div>

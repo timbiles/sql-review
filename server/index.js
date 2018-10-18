@@ -4,10 +4,10 @@ const massive = require('massive');
 const bodyParser = require('body-parser');
 const port = 3001;
 
-const {getBands, createBand, deleteBand } = require('./ctrl');
-
 const app = express();
 app.use(bodyParser.json());
+
+const { getBands, createBand } = require('./ctrl');
 
 massive(process.env.CONNECTION_STRING)
   .then(db => {
@@ -16,6 +16,8 @@ massive(process.env.CONNECTION_STRING)
   .catch(err => console.log(err));
 
 //endpoints
+app.get('/api/bands', getBands)
+app.post('/api/bands', createBand)
 
 app.listen(port, () => {
   console.log(`Listening on port:${port}`);
